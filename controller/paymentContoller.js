@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import Payment from "../Model/paymentsModel";
+import Payment from "../Model/paymentsModel.js";
 
 export const createPayment = async(req, res) => {
     const newPayment = new Payment(req.body)

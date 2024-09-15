@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import Customer from "../Model/customerModel"
+import Customer from "../Model/customerModel.js"
 
 export const createCustomer = async(req, res) => {
     const newCustomer = new Customer(req.body)

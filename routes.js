@@ -19,6 +19,6 @@ route.post('/postCust', createCustomer);
 route.post('/postPay', createPayment)
 
 //find all the data
-route.get('/findItems/:id', findItems)
+route.get('/findItems/', findItems)
 
 export default route

@@ -4,7 +4,7 @@ const paymentModels = new mongoose.Schema({
     id_cart: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'carts',
-        required: true
+        // required: true
     },
     id_pelanggan : {
         type: mongoose.Schema.Types.ObjectId,
@@ -23,9 +23,8 @@ const paymentModels = new mongoose.Schema({
         required: true,
     },
     status_payment: {
-        type: Boolean,
+        type: String,
         required: true,
-        default : false
     }
 })
 

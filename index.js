@@ -18,9 +18,10 @@ app.use('/api', Route)
 
 
 const PORT  = process.env.PORT || 7000
-const URL = process.env.MONGO_URL
+const URL = process.env.MONGODB_URL
 
 mongoose.connect(URL)
 app.listen(PORT, (res) => {
     console.log("Berhasil Menyambungkan")
+    res.json("Berhasil Menyambung")
 })

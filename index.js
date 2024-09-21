@@ -22,6 +22,5 @@ const URL = process.env.MONGODB_URL
 
 mongoose.connect(URL)
 app.listen(PORT, (res) => {
-    console.log("Berhasil Menyambungkan")
-    res.json("Berhasil Menyambung")
+    console.log("Berhasil Menyambungkan")    
 })

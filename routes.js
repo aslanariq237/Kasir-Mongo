@@ -7,6 +7,9 @@ import { getPayment, createPayment } from "./controller/paymentContoller.js";
 const route = express.Router()
 
 //get all The Data
+route.get('/', (req, res) => {
+    res.json("Hello WOrld");
+})
 route.get('/getItems', getItems);
 route.get('/getCarts', getCart);
 route.get('/getCust', getCustomer);

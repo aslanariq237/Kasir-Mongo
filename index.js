@@ -8,7 +8,7 @@ const app = express()
 dotenv.config()
 
 app.use(cors({
-    origin: 'https://kasir-tan.vercel.app/',
+    origin: 'https://kasir-tan.vercel.app',
     credentials: true,
     optionsSuccessStatus: 200
 }))

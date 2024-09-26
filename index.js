@@ -7,11 +7,12 @@ import cors from "cors"
 const app = express()
 dotenv.config()
 
-// app.use(cors({
-//     origin: 'http://localhost:5173',
-//     credentials: true,
-//     optionsSuccessStatus: 200
-// }))
+app.use(cors({
+    origin: 'https://kasir-tan.vercel.app/',
+    credentials: true,
+    optionsSuccessStatus: 200
+}))
+
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use('/api', Route)

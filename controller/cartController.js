@@ -38,3 +38,15 @@ export const findItems = async(req, res) => {
         res.status(500).json({errorMessage: error})
     }
 }
+
+export const deleteItems = async(req, res) => {
+    try{
+        const deleteAll = await Cart.deleteMany()       
+        if(!deleteAll){
+            res.status(404).json("Barang Mungkin di hapus")
+        }
+        res.status(200).json(deleteAll)
+    }catch(err) {
+        res.status(500).json({errorMessage: err})
+    }
+}

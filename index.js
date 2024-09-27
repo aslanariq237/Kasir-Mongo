@@ -12,19 +12,16 @@ dotenv.config()
 //     credentials: true,
 //     optionsSuccessStatus: 200
 // }))
+app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
-app.use('/api', Route)
+app.use("/api", Route)
 
 
 const PORT = process.env.PORT || 7000
-const URL = process.env.MONGODB_URL
+const URL = process.env.MONGO_URL
 
-mongoose.connect(URL)
+mongoose.connect(URL);
 app.listen(PORT, (res) => {
     console.log("Berhasil Menyambungkan")
 })
-
-// app.get('/', (req, res) => {
-//     res.json("Berhasil");
-// })

@@ -2,8 +2,14 @@ import mongoose from "mongoose";
 import Items from "../Model/itemsModel.js";
 
 export const createItems = async (req, res) => {
-    try {
-        const newItems = await Items(req.body)
+    try {        
+        const newItems = await Items({
+            nama : req.body.nama,
+            harga : req.body.harga,
+            file : req.file.filename,        
+            per : req.body.per,
+            stok : req.body.stok
+        })
 
         const { _id } = newItems
         const exist = await Items.findOne({ _id })
@@ -11,10 +17,15 @@ export const createItems = async (req, res) => {
         if (exist) {
             return res.status(400).json({ errorMessage: "Items Already Exists" })
         }
+
+        if (!req.file) {
+            return res.status(400).json({ error: 'File is Required' });
+        }
+
         const saveData = await newItems.save()
         res.status(200).json(saveData)
-    }catch(err) {
-        res.status(500).json({errorMessage: err})
+    } catch (err) {
+        res.status(500).json({ errorMessage: err.message })
     }
 }
 

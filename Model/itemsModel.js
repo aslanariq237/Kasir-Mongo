@@ -5,6 +5,10 @@ const ItemsModel = new mongoose.Schema({
         type: String, 
         required : true,
     },
+    file : {
+        type : String, 
+        required : true 
+    },
     harga: {
         type: Number,
         required: true

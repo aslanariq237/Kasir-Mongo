@@ -2,7 +2,8 @@ import mongoose from "mongoose";
 
 const paymentModels = new mongoose.Schema({
     id_cart: {
-        type: mongoose.Schema.Types.ObjectId,
+        // type: mongoose.Schema.Types.ObjectId,
+        type: String,
         ref: 'carts',
         // required: true
     },
